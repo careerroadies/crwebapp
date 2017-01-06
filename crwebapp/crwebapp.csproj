@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="components\shared\views\DashBoard - Copy %282%29.html" />
+    <Content Include="components\shared\views\DashBoard.html" />
+    <Content Include="Index - Copy.html" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -228,7 +231,7 @@
     <Content Include="components\shared\services\menu.service.js" />
     <Content Include="components\shared\views\basicprofile.html" />
     <Content Include="components\shared\views\dashboard - Copy.html" />
-    <Content Include="components\shared\views\dashboard.html" />
+    <Content Include="components\shared\views\dashboard_old.html" />
     <Content Include="components\shared\views\dashboardfooter.html" />
     <Content Include="components\shared\views\dashboardheader.html" />
     <Content Include="components\shared\views\footer.html" />
@@ -387,8 +390,8 @@
     <Content Include="img\placeholders\photos\photo8.jpg" />
     <Content Include="img\placeholders\photos\photo9%402x.jpg" />
     <Content Include="img\placeholders\photos\photo9.jpg" />
-    <Content Include="Dashboard.html" />
-    <Content Include="index.html" />
+    <Content Include="Index.html" />
+    <Content Include="Login.html" />
     <Content Include="js\app.js" />
     <Content Include="js\helpers\ckeditor\adapters\jquery.js" />
     <Content Include="js\helpers\ckeditor\build-config.js" />

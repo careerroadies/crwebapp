@@ -7,7 +7,7 @@ crApp.config(function ($routeProvider, $locationProvider) {
         }).
         when('/Register', { templateUrl: 'components/auth/views/register.html' })
         //.when('/Dashboard', { templateUrl: 'components/shared/views/dashboard.html' })
-        .when('/Dashboard', { templateUrl: '/Dashboard.html' })
+        .when('/Dashboard', { templateUrl: 'components/shared/views/DashBoard.html' })
         .when('/Profile/:userId/', { templateUrl: 'components/shared/views/basicprofile.html' })
         .when('/BasicProfile', { templateUrl: 'components/shared/views/basicprofile.html' })    
        .otherwise({ redirectTo: '/Home' });

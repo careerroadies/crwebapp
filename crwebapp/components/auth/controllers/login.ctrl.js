@@ -44,7 +44,8 @@ function loginController($scope, $rootScope, registerService, $location, $window
         var objUser = $scope.newUserObj();
       // registerService.Login(objUser, $scope.LoginComplete, $scope.Loginerror);
 
-        $window.location.href = "/Dashboard.html";
+        $window.location.href = "/Index.html#/Dashboard";
+        
         //window.location = "/applicationMaster.html#/BasicProfile";
         //window.location = "/applicationMaster.html#/Profile";
         //$scope.enablelogin = true;
