@@ -44,15 +44,13 @@
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/app.js"></script>
+    
     <script src="js/vendor/modernizr.min.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular.min.js"></script>
     <script src="Scripts/angular-sanitize.min.js"></script>
     <script src="Scripts/angular-messages.js"></script>
     <script src="Scripts/angular-route.min.js"></script>
-
-
 </head>
 <body>
     <!-- Page Wrapper -->
@@ -447,8 +445,21 @@
                                     <a href="javascript:void(0)">Home</a>
                                 </li>
                                 <li>
+                                    <a href="#/Dashboard">DashBoard</a>
+                                </li>
+                                <li>
                                     <a href="javascript:void(0)">Profile</a>
                                 </li>
+                                <li>
+                                    <a href="#/notesdashboard">Notes</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Post Ads</a>
+                                </li>
+                                
                                 <li class="dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Settings <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu">
@@ -493,7 +504,7 @@
                     </div>
                     <!-- END Dashboard Header -->
                     <!-- Mini Top Stats Row -->
-                   <div ng-view></div>
+                    <ng-view></ng-view>
                     <!-- END Widgets Row -->
                 </div>
                 <!-- END Page Content -->
@@ -581,8 +592,6 @@
     </div>
     <!-- END User Settings -->
     <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
-
-
     <!-- - - - - - - - - - - - - - - controller and services js files - - - - - - - - - - - - - - - - -->
     <script src="app.module.js"></script>
     <script src="app.routes.js"></script>
@@ -601,6 +610,8 @@
     <script src="components/shared/services/dropdown.service.js"></script>
     <script src="components/shared/services/file.upload.service.js"></script>
     <script src="components/shared/directive/file.upload.directive.js"></script>
+    <script src="components/shared/directive/alerts.directive.js"></script>
+    <script src="components/shared/directive/notes.directive.js"></script>
     <!--<script src="components/shared/directive/header.directive.js"></script>-->
     <script src="components/shared/directive/profile.directive.js"></script>
 
@@ -610,7 +621,9 @@
     <script src="js/helpers/gmaps.min.js"></script>
 
     <!-- Load and execute javascript code used only in this page -->
+    <script src="js/app.js"></script>
     <script src="js/pages/index.js"></script>
     <script>$(function () { Index.init(); });</script>
+    
 </body>
 </html>

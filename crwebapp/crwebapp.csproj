@@ -57,8 +57,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="components\notes\controllers\notes.controller.js" />
+    <Content Include="components\notes\services\notes.service.js" />
+    <Content Include="components\notes\views\dashboard.html" />
+    <Content Include="components\notes\views\old_notes.html" />
+    <Content Include="components\notes\views\notes.html" />
+    <Content Include="components\notes\views\viewnotes.html" />
+    <Content Include="components\shared\directive\notes.directive.js" />
+    <Content Include="components\shared\directive\alerts.directive.js" />
+    <Content Include="components\shared\views\alerts.html" />
     <Content Include="components\shared\views\DashBoard - Copy %282%29.html" />
     <Content Include="components\shared\views\DashBoard.html" />
+    <Content Include="components\shared\views\shownotes.html" />
     <Content Include="Index - Copy.html" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
@@ -1531,6 +1541,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="components\auth\directive\" />
+    <Folder Include="components\notes\directive\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

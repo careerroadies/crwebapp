@@ -8,7 +8,8 @@
  *  sure to remove its initialization from uiInit().
  */
 
-var App = function() {
+var App = function () {
+    
     /* Helper variables - set in uiInit() */
     var page, pageContent, header, footer, sidebar, sScroll, sidebarAlt, sScrollAlt;
 
@@ -444,10 +445,11 @@ var App = function() {
     };
 
     /* Interactive blocks functionality */
-    var interactiveBlocks = function() {
+    var interactiveBlocks = function () {
+        
 
         // Toggle block's content
-        $('[data-toggle="block-toggle-content"]').on('click', function(){
+        $('[data-toggle="block-toggle-content"]').on('click', function () {
             var blockContent = $(this).closest('.block').find('.block-content');
 
             if ($(this).hasClass('active')) {

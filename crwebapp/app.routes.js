@@ -9,7 +9,10 @@ crApp.config(function ($routeProvider, $locationProvider) {
         //.when('/Dashboard', { templateUrl: 'components/shared/views/dashboard.html' })
         .when('/Dashboard', { templateUrl: 'components/shared/views/DashBoard.html' })
         .when('/Profile/:userId/', { templateUrl: 'components/shared/views/basicprofile.html' })
-        .when('/BasicProfile', { templateUrl: 'components/shared/views/basicprofile.html' })    
+        .when('/BasicProfile', { templateUrl: 'components/shared/views/basicprofile.html' })
+        .when('/Notes', { templateUrl: 'components/notes/views/notes.html' })
+        .when('/notesdashboard', { templateUrl: 'components/notes/views/dashboard.html' })
+        .when('/viewnotes', { templateUrl: 'components/notes/views/viewnotes.html' })
        .otherwise({ redirectTo: '/Home' });
     //$locationProvider.html5Mode(true);
 });
