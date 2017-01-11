@@ -1,4 +1,4 @@
-﻿<div id="page-content">
+﻿<div id="page-content" ng-controller="notesController">
     <!-- eCommerce Orders Header -->
     <div class="content-header">
         <ul class="nav-horizontal text-center">
@@ -52,7 +52,7 @@
                     <td class="text-right hidden-xs"><strong>Active</strong></td>
 
                     <td class="hidden-xs text-center">14/01/2017</td>
-                    <td class="text-center"><button type="button" class="btn btn-xs btn-success">subscribe</button></td>
+                    <td class="text-center"><button type="button" class="btn btn-xs btn-success" ng-click="toggleModal('10');">subscribe</button></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
                             <a href="page_ecom_order_view.html" data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-eye"></i></a>
@@ -69,7 +69,7 @@
                     <td class="text-right hidden-xs"><strong>Active</strong></td>
 
                     <td class="hidden-xs text-center">14/01/2017</td>
-                    <td class="text-center"><button type="button" class="btn btn-xs btn-success">subscribe</button></td>
+                    <td class="text-center"><button type="button" class="btn btn-xs btn-success" ng-click="toggleModal('10');">subscribe</button></td>
                     <td class="text-center">
                         <div class="btn-group btn-group-xs">
                             <a href="page_ecom_order_view.html" data-toggle="tooltip" title="View" class="btn btn-default"><i class="fa fa-eye"></i></a>
@@ -84,6 +84,10 @@
         </table>
         <!-- END All Orders Content -->
     </div>
+    <subscribe-notes show='modalShown' profile-id='profileId' width='800px' height='90%'>
+        <p>Modal Content Goes here<p>
+    </subscribe-notes>
     <!-- END All Orders Block -->
 </div>
+
 
