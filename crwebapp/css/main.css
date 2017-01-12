@@ -1259,6 +1259,22 @@ a.widget.widget-hover-effect1:hover {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
+div.widget.widget-hover-effect1 {
+border:1px solid #ccc; 
+}
+div.widget.widget-hover-effect1 small.date {
+    padding:10px;
+}
+div.widget.widget-hover-effect1 .footer{
+border-top:1px solid #ccc; clear:both; background:#ccc;
+}
+div.widget.widget-hover-effect1:hover {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
 a.widget.widget-hover-effect1:active {
     -webkit-transform: translateY(-1px);
     transform: translateY(-1px);
@@ -1973,6 +1989,7 @@ h1, h2, h3 {
 .text-primary,
 .text-primary:hover,
 a,
+div.widget.widget-hover-effect1,
 a:hover,
 a:focus,
 a.text-primary,
