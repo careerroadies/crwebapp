@@ -35,7 +35,7 @@ function dashboardController($scope, dashboardService, fillComboService, $filter
         fillComboService.fillCombo('GetState', null, $scope.fillStateComboComplete, $scope.fillComboError);
     }
 
-
+    
     $scope.NextShow = function () {
         $scope.showDataLimit = $scope.showDataLimit + 5;
     }
@@ -55,15 +55,18 @@ function dashboardController($scope, dashboardService, fillComboService, $filter
         dashboardService.getSearchByLocation(objsearch, $scope.showusersComplete, $scope.showuserserror);
 
     };
-
+    
     $scope.searchParameter = function () {
         var searchparameter = new Object();
-        searchparameter.location = $scope.location;
-        searchparameter.city = $scope.city;
-        searchparameter.state = $scope.state;
+        //searchparameter.location = $scope.location;
+        //searchparameter.city = $scope.city;
+        //searchparameter.state = $scope.state;
+        searchparameter.location = "tansen";
+        searchparameter.city = "494";
+        searchparameter.state = "19";
         return searchparameter;
     }
-
+    $scope.showUsers();
     $scope.showDiv = function (item) {
         item.showdivelm = true;
     }

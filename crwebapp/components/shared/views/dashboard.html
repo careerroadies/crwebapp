@@ -1,78 +1,130 @@
-﻿<div class="row">
-    <div class="col-sm-6">
-        <div class=" widget">
-            <div class="widget-advanced">
-                <!-- Widget Header -->
-                <!-- END Widget Header -->
-                <!-- Widget Main -->
-                <div class="widget-main">
-                 
-                    <div class="gallery gallery-widget" data-toggle="lightbox-gallery">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo15.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo15.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo5.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo5.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo6.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo6.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo13.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo13.jpg" alt="image">
-                                </a>
-                            </div>
+﻿<div class="row" ng-controller="dashboardController" ng-init="initializeController()">
+    <!-- With Animation and Info Carousel -->
+    <div class="col-sm-4">
+        <!-- With Animation and Info Carousel Block -->
+        <div class="block">
+            <!-- With Animation and Info Carousel Title -->
+            <div class="block-title">
+                <h2><strong>Animation</strong> and <strong>Info</strong></h2>
+            </div>
+
+            <!-- END With Animation and Info Carousel Title -->
+            <!-- With Animation and Info Carousel Content -->
+            <div id="example-carousel" class="carousel slide">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#example-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#example-carousel" data-slide-to="1"></li>
+                    <li data-target="#example-carousel" data-slide-to="2"></li>
+                    <li data-target="#example-carousel" data-slide-to="3"></li>
+                </ol>
+                <!-- END Indicators -->
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" ng-repeat="friend in friendsList track by $index" ng-show="(($index < (page * numRecords)) && ($index >= ((page - 1) * numRecords)))">
+                    
+                    <div ng-class="$index == 0?'active item':'item'">
+                        {{$index}}
+                        <img ng-src="UploadImages/{{friend.profilepicture}}" id="profileimage" ng-click="toggleModal(friend.userid);" />
+                        <div class="carousel-caption">
+                            <p>Caption..</p>
                         </div>
                     </div>
+
                 </div>
-                <!-- END Widget Main -->
+                <!-- END Wrapper for slides -->
+                <!-- Controls -->
+                <a class="left carousel-control" ng-click="previous()" data-slide="prev">
+                    <span><i class="fa fa-chevron-left"></i></span>
+                </a>
+                <a class="right carousel-control" ng-click="next()" data-slide="next">
+                    <span><i class="fa fa-chevron-right"></i></span>
+                </a>
+                <!-- END Controls -->
             </div>
+            <!-- END With Animation and Info Carousel Content -->
         </div>
+        <!-- END With Animation and Info Carousel Block -->
     </div>
-
-    <div class="col-sm-6">
-        <div class=" widget">
-            <div class="widget-advanced">
-                <!-- Widget Header -->
-                <!-- END Widget Header -->
-                <!-- Widget Main -->
-                <div class="widget-main">
-
-                    <div class="gallery gallery-widget" data-toggle="lightbox-gallery">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo15.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo15.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo5.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo5.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo6.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo6.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-sm-3">
-                                <a href="img/placeholders/photos/photo13.jpg" class="gallery-link" title="Image Info">
-                                    <img src="img/placeholders/photos/photo13.jpg" alt="image">
-                                </a>
-                            </div>
-                        </div>
+    <!-- END With Animation and Info Carousel -->
+    <!-- With Animation and no Info Carousel -->
+    <div class="col-sm-4">
+        <!-- With Animation and no Info Carousel Block -->
+        <div class="block">
+            <!-- With Animation and no Info Carousel Title -->
+            <div class="block-title">
+                <h2><strong>Animation</strong> only</h2>
+            </div>
+            <!-- END With Animation and no Info Carousel Title -->
+            <!-- With Animation and no Info Carousel Content -->
+            <div id="example-carousel2" class="carousel slide">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img src="img/placeholders/photos/photo9.jpg" alt="image">
+                    </div>
+                    <div class="item">
+                        <img src="img/placeholders/photos/photo7.jpg" alt="image">
+                    </div>
+                    <div class="item">
+                        <img src="img/placeholders/photos/photo8.jpg" alt="image">
+                    </div>
+                    <div class="item">
+                        <img src="img/placeholders/photos/photo10.jpg" alt="image">
                     </div>
                 </div>
-                <!-- END Widget Main -->
+                <!-- END Wrapper for slides -->
+                <!-- Controls -->
+                <a class="left carousel-control" href="#example-carousel2" data-slide="prev">
+                    <span><i class="fa fa-chevron-left"></i></span>
+                </a>
+                <a class="right carousel-control" href="#example-carousel2" data-slide="next">
+                    <span><i class="fa fa-chevron-right"></i></span>
+                </a>
+                <!-- END Controls -->
             </div>
+            <!-- END With Animation and no Info Carousel Content -->
         </div>
+        <!-- END With Animation and no Info Carousel Block -->
+    </div>
+    <!-- END Alternative Carousel -->
+    <!-- Without Animation or Info Block -->
+    <div class="col-sm-4">
+        <div class="block">
+            <!-- Without Animation  or InfoTitle -->
+            <div class="block-title">
+                <h2><strong>Simple</strong></h2>
+            </div>
+            <!-- END Without Animation or Info Title -->
+            <!-- Without Animation or Info Content -->
+            <div id="example-carousel3" class="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="active item">
+                        <img src="img/placeholders/photos/photo11.jpg" alt="image">
+                    </div>
+                    <div class="item">
+                        <img src="img/placeholders/photos/photo12.jpg" alt="image">
+                    </div>
+                    <div class="item">
+                        <img src="img/placeholders/photos/photo13.jpg" alt="image">
+                    </div>
+                    <div class="item">
+                        <img src="img/placeholders/photos/photo14.jpg" alt="image">
+                    </div>
+                </div>
+                <!-- END Wrapper for slides -->
+                <!-- Controls -->
+                <a class="left carousel-control" href="#example-carousel3" data-slide="prev">
+                    <span><i class="fa fa-chevron-left"></i></span>
+                </a>
+                <a class="right carousel-control" href="#example-carousel3" data-slide="next">
+                    <span><i class="fa fa-chevron-right"></i></span>
+                </a>
+                <!-- END Controls -->
+            </div>
+            <!-- END Without Animation or Info Content -->
+        </div>
+        <!-- END Without Animation or Info Block -->
     </div>
 </div>
 <!-- END Mini Top Stats Row -->
