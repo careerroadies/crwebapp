@@ -22,8 +22,8 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" ng-repeat="friend in friendsList track by $index" ng-show="(($index < (page * numRecords)) && ($index >= ((page - 1) * numRecords)))">
                     
-                    <div ng-class="$index == 0?'active item':'item'">
-                        {{$index}}
+                    <!--<div ng-class="$index == 0?'active item':'item'">-->
+                    <div ng-class="{$index == 0?'active item':'item'}">
                         <img ng-src="UploadImages/{{friend.profilepicture}}" id="profileimage" ng-click="toggleModal(friend.userid);" />
                         <div class="carousel-caption">
                             <p>Caption..</p>
