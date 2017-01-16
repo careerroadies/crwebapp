@@ -1,95 +1,455 @@
-﻿<script type="text/javascript">
-    $(document).ready(function () {
-        var placeholder = null;
-        $('input[type=text]').focus(function () {
-            placeholder = $(this).attr("placeholder");
-            $(this).attr("placeholder", "");
-        });
-        $('input[type=text]').blur(function () {
-            $(this).attr("placeholder", placeholder);
-        });
-    });
-</script>
-<form name="myForm" novalidate class="css-form">
-    <div class="main" ng-controller="profileController" ng-init="initializeController();">
-        <div class="two">
-            <div class="register">
-                <h3>{{lable}}</h3>
-                <h3>UserID - : {{userid}}</h3>
+﻿
+<div class="row">
+    <div class="col-md-8">
+        <div class="block">
+            <div class="panel with-nav-tabs">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" data-target="#tab1warning">Basic Details</a></li>
+                        <li><a data-toggle="tab" data-target="#tab2warning">Education</a></li>
+                        <li><a data-toggle="tab" data-target="#tab3warning">Accadimic</a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
 
-                <h2>{{message}}</h2>
-                <div class="form-group">
-                    <label>First Name:</label>
-                    <input type="text" id="txtFirstName" class="form-control" accept="" spellcheck="false" name="firstname"
-                           placeholder="Please enter first name" ng-model="firstname" required />
-                </div>
-                <div class="form-group">
-                    <label>Middle Name:</label>
-                    <input type="text" id="txtMiddleName" class="form-control" accept="" spellcheck="false" name="middlename"
-                           placeholder="Please enter middle name" ng-model="middlename" />
-                </div>
+                        <div class="tab-pane fade in active" id="tab1warning">
+                            <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">First Name <span class="text-danger">*</span></label>
 
-                <div class="form-group">
-                    <label>Last Name:</label>
-                    <input type="text" id="txtLastName" class="form-control" accept="" spellcheck="false" name="lastname"
-                           placeholder="Please enter last name" ng-model="lastname" required />
-                </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your First Name"
+                                                       ng-model="FirstName"
+                                                       ng-class="{'validation-error': FirstNameInputError}">
 
-                <div class="form-group">
-                    <label>Father Name:</label>
-                    <input type="text" id="txtFatherName" class="form-control" accept="" spellcheck="false" name="fathername"
-                           placeholder="Please enter your father name" ng-model="fathername" required />
-                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">Last Name <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your Last Name"
+                                                       ng-model="LastName"
+                                                       ng-class="{'validation-error': LastNameInputError}">
 
-                <div class="form-group">
-                    <label>Mother Name:</label>
-                    <input type="text" id="txtMotherName" class="form-control" accept="" spellcheck="false" name="mothername"
-                           placeholder="Please enter your mother name" ng-model="mothername" required />
-                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="example-datepicker">Datepicker</label>
+                                        <div class="col-md-6">
+                                            <input type="date" id="example-datepicker" name="example-datepicker"
+                                                   class="form-control input-datepicker" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">Location <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input class='form-control' id='id_state_name' autocomplete="off" placeholder='State' type='text' ng-model="location">
 
-                <div class="form-group">
-                    <label for="txtDOB">DOB:</label>
-                    <input type="date" id="txtDOB" spellcheck="false" placeholder="Please enter Date of Birth" class="textbox" ng-model="dob" />
-                </div>
-                <div class="form-group">
-                    <label for="txtMobile">Mobile Number:</label>
-                    <input type="number" id="txtMobile" spellcheck="false" placeholder="Please Enter Contact Number" ng-model="contactno" />
-                </div>
-                <div class="form-group">
-                    <label>Country:</label>
-                    <select id="ddlCountry" name="country" ng-model="country" ng-options="obj.countryid as obj.name for obj in countries" ng-change="getCountryState(country)">
-                        <option value="">-- Choose Country--</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>state:</label>
-                    <select id="ddlState" name="state" ng-model="state" ng-disabled="!childSelectIsDisabled" ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
-                        <option value="">-- Choose State --</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>City:</label>
-                    <select id="ddlCity" name="city" ng-model="city" ng-disabled="!state" ng-options="c.cityid as c.name for c in cities">
-                        <option value="">-- Choose City --</option>
-                    </select>
-                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">State <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <select id="ddlState" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
+                                                    ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <option value="">-- Choose State --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">City<span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <select id="ddlCity" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
+                                                    ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <option value="">-- Choose city --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='col-md-4 control-label' for='id_checkin'>Mobile No</label>
+                                        <div class='col-md-6 indent-small'>
+                                            <div class='form-group internal'>
+                                                <input class='form-control' id='id_MobileNumber_name' placeholder='Mobile Number' type='number' ng-model="MobileNumber">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_title'>E Mail</label>
+                                        <div class='col-md-6'>
 
-                <div class="form-group">
-                    <label>Address:</label>
-                    <textarea id="txtAddress" class="form-control" spellcheck="false" name="permanentaddress"
-                              placeholder="Please enter lasr name" ng-model="permanentaddress" required></textarea>
-                </div>
 
-                <div class="form-group">
-                    <label>Upload Image:</label>
-                    <input type="file" input-file-control="uploadFile" />
-                    <img ng-src="{{image_sorce}}" width="{{width}}" height="{{height}}" />
-                </div>
+                                            <input class='form-control' id='id_first_name' placeholder='Primary Email' type='text' ng-model="PrimaryEmail"
+                                                   ng-class="{'validation-error': PrimaryEmailInputError}">
 
-                <div style="padding-left:200px;">
-                    <input type="submit" value="Save" id="btnSubmit" class="button" ng-click="SaveProfile()" />
+
+                                            <!--<div class='col-md-6 indent-small'>
+                                                <div class='form-group internal'>
+                                                    <input class='form-control' id='id_last_name' placeholder='AlternateEmail' type='text'
+                                                           ng-model="AlternateEmail" ng-class="{'validation-error': AlternateEmailInputError}">
+                                                </div>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Marital Status</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_marital_status' ng-model="MaritalStatus">
+                                                        <option value="0">Please Select</option>
+                                                        <option value="1">Unmarried</option>
+                                                        <option value="2">Married</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Gender</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_marital_status' ng-model="Gender"
+                                                            ng-class="{'validation-error': GenderInputError}">
+                                                        <option value="0">Male</option>
+                                                        <option value="1">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='col-md-4 control-label' for='id_comments'>Upload Image</label>
+                                        <div class='col-md-6'>
+                                            <input type="file" input-file-control="uploadFile" />
+                                            <img ng-src="{{image_sorce}}" width="{{width}}" height="{{height}}" />
+
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_comments'>Write brief</label>
+                                        <div class='col-md-6'>
+                                            <textarea class='form-control' id='id_profile_text' placeholder='Write about your self.....' rows='3' ng-model="ProfileText"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Profile Status</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_status' ng-model="Status"
+                                                            ng-options="s.id as s.name for s in  profileStatus track by s.id"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-group form-actions">
+                                    <div class="col-md-8 col-md-offset-4">
+                                        <button type="submit" class="btn btn-sm btn-primary" ng-click="SaveBasicDetails();">
+                                            <i class="fa fa-angle-right"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="tab2warning">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_username">Username <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your username.." required>
+                                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_email">Email <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" id="val_email" name="val_email" class="form-control" placeholder="test@example.com" required>
+                                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="password" id="val_password" name="val_password" class="form-control" placeholder="Choose a crazy one.." required>
+                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_confirm_password">Retype Password <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="password" id="val_confirm_password" name="val_confirm_password" class="form-control" placeholder="..and confirm it!" required>
+                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-actions">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <input type="reset" class="btn btn-sm btn-warning" id="back2" value="Back">
+                                    <input type="submit" class="btn btn-sm btn-primary" id="next2" value="Next">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab3warning">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_username">Username <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your username.." required>
+                                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_email">Email <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" id="val_email" name="val_email" class="form-control" placeholder="test@example.com" required>
+                                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="password" id="val_password" name="val_password" class="form-control" placeholder="Choose a crazy one.." required>
+                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="val_confirm_password">Retype Password <span class="text-danger">*</span></label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="password" id="val_confirm_password" name="val_confirm_password" class="form-control" placeholder="..and confirm it!" required>
+                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-</form>
+    <div class="col-md-4">
+        <!-- Info Block -->
+        <div class="block">
+            <!-- Info Title -->
+            <div class="block-title">
+                <div class="block-options pull-right">
+                    <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default" data-toggle="tooltip" title="Friend Request"><i class="fa fa-plus"></i></a>
+                    <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default" data-toggle="tooltip" title="Hire"><i class="fa fa-briefcase"></i></a>
+                </div>
+                <h2>About <strong>John Doe</strong> <small>&bull; <i class="fa fa-file-text text-primary"></i> <a href="javascript:void(0)" data-toggle="tooltip" title="Download Bio in PDF">Bio</a></small></h2>
+            </div>
+            <!-- END Info Title -->
+            <!-- Info Content -->
+            <table class="table table-borderless table-striped">
+                <tbody>
+                    <tr>
+                        <td style="width: 20%;"><strong>Info</strong></td>
+                        <td>Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Founder</strong></td>
+                        <td><a href="javascript:void(0)">Company Inc</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Education</strong></td>
+                        <td><a href="javascript:void(0)">University Name</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Projects</strong></td>
+                        <td><a href="javascript:void(0)" class="label label-danger">168</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best Skills</strong></td>
+                        <td>
+                            <a href="javascript:void(0)" class="label label-info">HTML</a>
+                            <a href="javascript:void(0)" class="label label-info">CSS</a>
+                            <a href="javascript:void(0)" class="label label-info">Javascript</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- END Info Content -->
+        </div>
+        <!-- END Info Block -->
+        <!-- Photos Block -->
+        <div class="block">
+            <!-- Photos Title -->
+            <div class="block-title">
+                <div class="block-options pull-right">
+                    <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil"></i></a>
+                </div>
+                <h2>Best <strong>Photos</strong> <small>&bull; <a href="javascript:void(0)">25 Albums</a></small></h2>
+            </div>
+            <!-- END Photos Title -->
+            <!-- Photos Content -->
+            <div class="gallery" data-toggle="lightbox-gallery">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo12.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo12.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo15.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo15.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo3.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo3.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo4.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo4.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo5.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo5.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo6.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo6.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo20.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo20.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo17.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo17.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo14.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo14.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo9.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo9.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo11.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo11.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <a href="img/placeholders/photos/photo10.jpg" class="gallery-link" title="Image Info">
+                            <img src="img/placeholders/photos/photo10.jpg" alt="image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END Photos Content -->
+        </div>
+        <!-- END Photos Block -->
+        <!-- Friends Block -->
+        <div class="block">
+            <!-- Friends Title -->
+            <div class="block-title">
+                <h2>New <strong>Friends</strong> <small>&bull; <a href="javascript:void(0)">450</a></small></h2>
+            </div>
+            <!-- END Friends Title -->
+            <!-- Friends Content -->
+            <div class="row text-center">
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar2.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar14.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar6.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar14.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar16.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar11.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar4.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar9.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar12.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar14.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar4.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-lg-2 block-section">
+                    <a href="javascript:void(0)">
+                        <img src="img/placeholders/avatars/avatar15.jpg" alt="image" class="img-circle" data-toggle="tooltip" title="Username">
+                    </a>
+                </div>
+            </div>
+            <!-- END Friends Content -->
+        </div>
+        <!-- END Friends Block -->
+        
+    </div>
+
+</div>
+

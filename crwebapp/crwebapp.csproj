@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="components\auth\views\viewprofile.html" />
     <Content Include="components\notes\controllers\notes.controller.js" />
     <Content Include="components\notes\directive\subscribe.directive.js" />
     <Content Include="components\notes\services\notes.service.js" />

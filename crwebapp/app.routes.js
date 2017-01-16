@@ -13,6 +13,8 @@ crApp.config(function ($routeProvider, $locationProvider) {
         .when('/Notes', { templateUrl: 'components/notes/views/notes.html' })
         .when('/notesdashboard', { templateUrl: 'components/notes/views/dashboard.html' })
         .when('/viewnotes', { templateUrl: 'components/notes/views/viewnotes.html' })
+        .when('/profile', { templateUrl: 'components/auth/views/profile.html' })
+        .when('/viewprofile', { templateUrl: 'components/auth/views/viewprofile.html' })
        .otherwise({ redirectTo: '/Home' });
     //$locationProvider.html5Mode(true);
 });
