@@ -88,14 +88,6 @@
 
                                             <input class='form-control' id='id_first_name' placeholder='Primary Email' type='text' ng-model="PrimaryEmail"
                                                    ng-class="{'validation-error': PrimaryEmailInputError}">
-
-
-                                            <!--<div class='col-md-6 indent-small'>
-                                                <div class='form-group internal'>
-                                                    <input class='form-control' id='id_last_name' placeholder='AlternateEmail' type='text'
-                                                           ng-model="AlternateEmail" ng-class="{'validation-error': AlternateEmailInputError}">
-                                                </div>
-                                            </div>-->
                                         </div>
                                     </div>
                                     <div class='form-group'>
@@ -165,86 +157,289 @@
                         </div>
 
                         <div class="tab-pane fade" id="tab2warning">
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_username">Username <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your username.." required>
-                                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                            <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">First Name <span class="text-danger">*</span></label>
+
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your First Name"
+                                                       ng-model="FirstName"
+                                                       ng-class="{'validation-error': FirstNameInputError}">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">Last Name <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your Last Name"
+                                                       ng-model="LastName"
+                                                       ng-class="{'validation-error': LastNameInputError}">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="example-datepicker">Datepicker</label>
+                                        <div class="col-md-6">
+                                            <input type="date" id="example-datepicker" name="example-datepicker"
+                                                   class="form-control input-datepicker" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">Location <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input class='form-control' id='id_state_name' autocomplete="off" placeholder='State' type='text' ng-model="location">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">State <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <select id="ddlState" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
+                                                    ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <option value="">-- Choose State --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">City<span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <select id="ddlCity" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
+                                                    ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <option value="">-- Choose city --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='col-md-4 control-label' for='id_checkin'>Mobile No</label>
+                                        <div class='col-md-6 indent-small'>
+                                            <div class='form-group internal'>
+                                                <input class='form-control' id='id_MobileNumber_name' placeholder='Mobile Number' type='number' ng-model="MobileNumber">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_title'>E Mail</label>
+                                        <div class='col-md-6'>
+
+
+                                            <input class='form-control' id='id_first_name' placeholder='Primary Email' type='text' ng-model="PrimaryEmail"
+                                                   ng-class="{'validation-error': PrimaryEmailInputError}">
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Marital Status</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_marital_status' ng-model="MaritalStatus">
+                                                        <option value="0">Please Select</option>
+                                                        <option value="1">Unmarried</option>
+                                                        <option value="2">Married</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Gender</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_marital_status' ng-model="Gender"
+                                                            ng-class="{'validation-error': GenderInputError}">
+                                                        <option value="0">Male</option>
+                                                        <option value="1">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='col-md-4 control-label' for='id_comments'>Upload Image</label>
+                                        <div class='col-md-6'>
+                                            <input type="file" input-file-control="uploadFile" />
+                                            <img ng-src="{{image_sorce}}" width="{{width}}" height="{{height}}" />
+
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_comments'>Write brief</label>
+                                        <div class='col-md-6'>
+                                            <textarea class='form-control' id='id_profile_text' placeholder='Write about your self.....' rows='3' ng-model="ProfileText"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Profile Status</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_status' ng-model="Status"
+                                                            ng-options="s.id as s.name for s in  profileStatus track by s.id"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-group form-actions">
+                                    <div class="col-md-8 col-md-offset-4">
+                                        <button type="submit" class="btn btn-sm btn-primary" ng-click="SaveBasicDetails();">
+                                            <i class="fa fa-angle-right"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_email">Email <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" id="val_email" name="val_email" class="form-control" placeholder="test@example.com" required>
-                                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="password" id="val_password" name="val_password" class="form-control" placeholder="Choose a crazy one.." required>
-                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_confirm_password">Retype Password <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="password" id="val_confirm_password" name="val_confirm_password" class="form-control" placeholder="..and confirm it!" required>
-                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group form-actions">
-                                <div class="col-md-8 col-md-offset-4">
-                                    <input type="reset" class="btn btn-sm btn-warning" id="back2" value="Back">
-                                    <input type="submit" class="btn btn-sm btn-primary" id="next2" value="Next">
-                                </div>
-                            </div>
+                            </form>
+
                         </div>
+
                         <div class="tab-pane fade" id="tab3warning">
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_username">Username <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your username.." required>
-                                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                            <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">First Name <span class="text-danger">*</span></label>
+
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your First Name"
+                                                       ng-model="FirstName"
+                                                       ng-class="{'validation-error': FirstNameInputError}">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">Last Name <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your Last Name"
+                                                       ng-model="LastName"
+                                                       ng-class="{'validation-error': LastNameInputError}">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="example-datepicker">Datepicker</label>
+                                        <div class="col-md-6">
+                                            <input type="date" id="example-datepicker" name="example-datepicker"
+                                                   class="form-control input-datepicker" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="val_username">Location <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <input class='form-control' id='id_state_name' autocomplete="off" placeholder='State' type='text' ng-model="location">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">State <span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <select id="ddlState" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
+                                                    ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <option value="">-- Choose State --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">City<span class="text-danger">*</span></label>
+                                        <div class="col-md-6">
+                                            <select id="ddlCity" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
+                                                    ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <option value="">-- Choose city --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='col-md-4 control-label' for='id_checkin'>Mobile No</label>
+                                        <div class='col-md-6 indent-small'>
+                                            <div class='form-group internal'>
+                                                <input class='form-control' id='id_MobileNumber_name' placeholder='Mobile Number' type='number' ng-model="MobileNumber">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_title'>E Mail</label>
+                                        <div class='col-md-6'>
+
+
+                                            <input class='form-control' id='id_first_name' placeholder='Primary Email' type='text' ng-model="PrimaryEmail"
+                                                   ng-class="{'validation-error': PrimaryEmailInputError}">
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Marital Status</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_marital_status' ng-model="MaritalStatus">
+                                                        <option value="0">Please Select</option>
+                                                        <option value="1">Unmarried</option>
+                                                        <option value="2">Married</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Gender</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_marital_status' ng-model="Gender"
+                                                            ng-class="{'validation-error': GenderInputError}">
+                                                        <option value="0">Male</option>
+                                                        <option value="1">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class='col-md-4 control-label' for='id_comments'>Upload Image</label>
+                                        <div class='col-md-6'>
+                                            <input type="file" input-file-control="uploadFile" />
+                                            <img ng-src="{{image_sorce}}" width="{{width}}" height="{{height}}" />
+
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_comments'>Write brief</label>
+                                        <div class='col-md-6'>
+                                            <textarea class='form-control' id='id_profile_text' placeholder='Write about your self.....' rows='3' ng-model="ProfileText"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-md-4 control-label' for='id_equipment'>Profile Status</label>
+                                        <div class='col-md-8'>
+                                            <div class='col-md-3'>
+                                                <div class='form-group internal'>
+                                                    <select class='form-control' id='id_status' ng-model="Status"
+                                                            ng-options="s.id as s.name for s in  profileStatus track by s.id"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-group form-actions">
+                                    <div class="col-md-8 col-md-offset-4">
+                                        <button type="submit" class="btn btn-sm btn-primary" ng-click="SaveBasicDetails();">
+                                            <i class="fa fa-angle-right"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_email">Email <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="text" id="val_email" name="val_email" class="form-control" placeholder="test@example.com" required>
-                                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_password">Password <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="password" id="val_password" name="val_password" class="form-control" placeholder="Choose a crazy one.." required>
-                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="val_confirm_password">Retype Password <span class="text-danger">*</span></label>
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <input type="password" id="val_confirm_password" name="val_confirm_password" class="form-control" placeholder="..and confirm it!" required>
-                                        <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
+
                         </div>
 
                     </div>
