@@ -3,3 +3,4 @@ D:\crwebapp\crwebapp\crwebapp\bin\crwebapp.dll
 D:\crwebapp\crwebapp\crwebapp\bin\crwebapp.pdb
 D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.dll
 D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.pdb
+D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyReference.cache

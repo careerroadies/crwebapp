@@ -4,6 +4,38 @@ crApp.controller("profileController", ['$scope', 'profileService', '$routeParams
 
 function profileController($scope, profileService, $routeParams, fillComboService, $filter, fileUploadService, alertsService, $rootScope) {
 
+    $scope.showview = true;
+    $scope.showedit = false;
+
+    $scope.showeduview = true;
+    $scope.showeduedit = false;
+
+
+    $scope.showhide = function (type, tabtype) {
+        if (tabtype == 'basic') {
+            if (type == 'v') {
+                $scope.showview = false;
+                $scope.showedit = true;
+            }
+            else {
+                $scope.showview = true;
+                $scope.showedit = false;
+
+            }
+        }
+        else {
+
+            if (type == 'v') {
+                $scope.showeduview = false;
+                $scope.showeduedit = true;
+            }
+            else {
+                $scope.showeduview = true;
+                $scope.showeduedit = false;
+
+            }
+        }
+    }
     $scope.profileStatus = [
     {
         id: 0,
@@ -21,12 +53,12 @@ function profileController($scope, profileService, $routeParams, fillComboServic
     $rootScope.closeAlert = alertsService.closeAlert;
     $rootScope.alerts = [];
 
-   
+
 
     $scope.UserId = $routeParams.userId;
     var formdata = new FormData();
     $scope.ProfilePicture = "";
-    
+
     $scope.initializeController = function () {
         $scope.lable = "Create Profile";
         $scope.message = "Fill the Profile Details.";
@@ -35,11 +67,11 @@ function profileController($scope, profileService, $routeParams, fillComboServic
         //$scope.childSelectIsDisabled = false;
 
         fillComboService.fillCombo('GetState', null, $scope.fillStateComboComplete, $scope.fillComboError);
-        
-    }
-    
 
-    $scope.initControlles = function() {
+    }
+
+
+    $scope.initControlles = function () {
         $scope.FirstName = "";
         $scope.LastName = "";
         $scope.Gender = "0";
@@ -58,7 +90,7 @@ function profileController($scope, profileService, $routeParams, fillComboServic
         $scope.location = "";
 
     }
-   
+
 
     // For Upload Image for profile.    
     $scope.uploadFile = function (event) {
@@ -83,19 +115,19 @@ function profileController($scope, profileService, $routeParams, fillComboServic
         $scope.ProfilePicture = files[0].name;
     };
 
-  /*  $scope.getCountryState = function (country) {
-
-        if (country) {
-
-            ($filter('filter')(fillComboService.fillCombo('GetState', country, $scope.fillStateComboComplete, $scope.fillComboError)));
-            $scope.childSelectIsDisabled = true;
-        }
-        else {
-            $scope.childSelectIsDisabled = false;
-            $scope.states = null;
-        }
-
-    };*/
+    /*  $scope.getCountryState = function (country) {
+  
+          if (country) {
+  
+              ($filter('filter')(fillComboService.fillCombo('GetState', country, $scope.fillStateComboComplete, $scope.fillComboError)));
+              $scope.childSelectIsDisabled = true;
+          }
+          else {
+              $scope.childSelectIsDisabled = false;
+              $scope.states = null;
+          }
+  
+      };*/
 
     $scope.getStateCities = function (state) {
         if (state) {
@@ -153,10 +185,10 @@ function profileController($scope, profileService, $routeParams, fillComboServic
     }
 
     $scope.newProfileObj = function () {
-        
 
-       // $scope.initControlles();
-      
+
+        // $scope.initControlles();
+
         var puser = new Object();
         puser.FirstName = $scope.FirstName;
         puser.LastName = $scope.LastName;
