@@ -5,15 +5,15 @@
             <div class="panel with-nav-tabs">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" data-target="#tab1warning">Basic Details</a></li>
-                        <li><a data-toggle="tab" data-target="#tab2warning">Education</a></li>
-                        <li><a data-toggle="tab" data-target="#tab3warning">Profile configuration</a></li>
-                        <li><a data-toggle="tab" data-target="#tab4">Tutor Profile</a></li>
+                        <li class="active"><a data-toggle="tab" data-target="#tab_basicDetails">Basic Details</a></li>
+                        <li><a data-toggle="tab" data-target="#tab_education">Education</a></li>
+                        <li><a data-toggle="tab" data-target="#tab_profile_config">Profile configuration</a></li>
+                        <li><a data-toggle="tab" data-target="#tab_tutor_profile">Tutor Profile</a></li>
                     </ul>
                 </div>
-
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="tab1warning">
+
+                    <div class="tab-pane fade in active" id="tab_basicDetails">
                         <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;" ng-hide="!showview">
                             <fieldset>
                                 <div ng-click="showhide('v', 'basic');">Edit</div>
@@ -303,7 +303,7 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="tab2warning">
+                    <div class="tab-pane fade" id="tab_education">
                         <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;" ng-hide="!showeduview">
                             <fieldset>
                                 <div ng-click="showhide('v', 'Education');">Edit</div>
@@ -662,7 +662,7 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="tab3warning">
+                    <div class="tab-pane fade" id="tab_profile_config">
                         <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;">
                             <fieldset>
                                 <div class="form-group">
@@ -805,8 +805,7 @@
 
                     </div>
 
-
-                    <div class="tab-pane fade in active" id="tab4">
+                    <div class="tab-pane fade in active" id="tab_tutor_profile">
                         <form action="page_forms_components.html" method="post" class="form-horizontal" onsubmit="return false;" ng-hide="!showview">
                             <fieldset>
                                 <div ng-click="showhide('v', 'basic');">Edit</div>
