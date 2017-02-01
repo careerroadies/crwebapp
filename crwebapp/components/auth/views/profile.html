@@ -22,13 +22,13 @@
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">First Name</label>
                                             <div class="col-md-7">
-                                                <p class=" form-control-static">Deepak Bhardwaj</p>
+                                                <p class=" form-control-static" ng-bind="FirstName">Deepak Bhardwaj</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">Last Name</label>
                                             <div class="col-md-7">
-                                                <p class="form-control-static">Bhardwaj</p>
+                                                <p class="form-control-static" ng-bind="LastName">Bhardwaj</p>
                                             </div>
                                         </div>
                                     </div>
@@ -36,15 +36,33 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label">Date</label>
+                                            <label class="col-md-5 control-label">Date of Birth</label>
                                             <div class="col-md-7">
-                                                <p class=" form-control-static">12/07/1980</p>
+                                                <p class=" form-control-static" ng-bind="Dob">12/07/1980</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label">Location</label>
+                                            <label class="col-md-5 control-label">Mobile</label>
                                             <div class="col-md-7">
-                                                <p class="form-control-static">Delhi</p>
+                                                <p class=" form-control-static" ng-bind="MobileNumber">xxxx1111xxx</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+
+                                        <div class="col-md-6">
+                                            <label class="col-md-5 control-label">Primary Email</label>
+                                            <div class="col-md-7">
+                                                <p class="form-control-static" ng-bind="PrimaryEmail">aa@a.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-5 control-label">Alternate Email</label>
+                                            <div class="col-md-7">
+                                                <p class="form-control-static" ng-bind="AlternateEmail">aa@a.com</p>
                                             </div>
                                         </div>
                                     </div>
@@ -54,13 +72,13 @@
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">State</label>
                                             <div class="col-md-7">
-                                                <p class=" form-control-static">Delhi</p>
+                                                <p class=" form-control-static" ng-bind="State">Delhi</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">City</label>
                                             <div class="col-md-7">
-                                                <p class="form-control-static">New Delhi</p>
+                                                <p class="form-control-static" ng-bind="City">New Delhi</p>
                                             </div>
                                         </div>
                                     </div>
@@ -68,31 +86,15 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label">Mobile</label>
+                                            <label class="col-md-5 control-label">Locality</label>
                                             <div class="col-md-7">
-                                                <p class=" form-control-static">xxxx1111xxx</p>
+                                                <p class="form-control-static" ng-bind="Locality">New MIG Flates</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label">Email</label>
+                                            <label class="col-md-5 control-label">Pin Code</label>
                                             <div class="col-md-7">
-                                                <p class="form-control-static">aa@a.com</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="col-md-6">
-                                            <label class="col-md-5 control-label">Marital Status</label>
-                                            <div class="col-md-7">
-                                                <p class=" form-control-static">Single</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="col-md-5 control-label">Gender</label>
-                                            <div class="col-md-7">
-                                                <p class="form-control-static">Male</p>
+                                                <p class="form-control-static" ng-bind="Pincode">110096</p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,15 +103,33 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label">View Image</label>
+                                            <label class="col-md-5 control-label">Marital Status</label>
                                             <div class="col-md-7">
-                                                <p class=" form-control-static"><img ng-src="UploadImages/Deepak.jpg" width="150" height="100"></p>
+                                                <p class=" form-control-static" ng-bind="MaritalStatus">Single</p>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
+                                            <label class="col-md-5 control-label">Gender</label>
+                                            <div class="col-md-7">
+                                                <p class="form-control-static" ng-bind="Gender">Male</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+
+                                        <div class="col-md-6">
                                             <label class="col-md-5 control-label">Profile Status</label>
                                             <div class="col-md-7">
-                                                <p class="form-control-static">Male</p>
+                                                <p class="form-control-static" ng-bind="Status">Active</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-5 control-label">View Image</label>
+                                            <div class="col-md-7">
+                                                <p class=" form-control-static" ng-bind="ProfilePicture"><img ng-src="UploadImages/Deepak.jpg" width="150" height="100"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +140,7 @@
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">Description</label>
                                             <div class="col-md-7">
-                                                <p class=" form-control-static">Hi. This is my profile</p>
+                                                <p class=" form-control-static" ng-bind="ProfileText">Hi. This is my profile</p>
                                             </div>
                                         </div>
                                     </div>
@@ -144,12 +164,11 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label" for="val_username">Last Name <span class="text-danger">*</span></label>
+                                            <label class="col-md-5 control-label" for="val_username">Last Name </label>
                                             <div class="col-md-7">
                                                 <div class="input-group">
                                                     <input type="text" id="val_username" name="val_username" class="form-control" placeholder="Your Last Name"
-                                                           ng-model="LastName"
-                                                           ng-class="{'validation-error': LastNameInputError}">
+                                                           ng-model="LastName">
 
                                                 </div>
                                             </div>
@@ -160,32 +179,52 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label" for="example-datepicker">Datepicker</label>
+                                            <label class="col-md-5 control-label" for="example-datepicker">Date of Birth<span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <input type="date" id="example-datepicker" name="example-datepicker"
-                                                       class="form-control input-datepicker" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                                <input type="date" id="Dob-datepicker" name="Dob-datepicker"
+                                                       class="form-control input-datepicker" data-date-format="mm/dd/yy" placeholder="mm/dd/yy"
+                                                       ng-model="Dob"
+                                                       ng-class="{'validation-error': DobInputError}">
                                             </div>
                                         </div>
-
                                         <div class="col-md-6">
-                                            <label class="col-md-5 control-label" for="val_username">Location <span class="text-danger">*</span></label>
-                                            <div class="col-md-7">
-                                                <div class="input-group">
-                                                    <input class='form-control' id='id_state_name' autocomplete="off" placeholder='location' type='text' ng-model="location">
-
+                                            <label class='col-md-5 control-label' for='id_checkin'>Mobile No</label>
+                                            <div class='col-md-7 indent-small'>
+                                                <div class='form-group internal'>
+                                                    <input class='form-control' id='id_MobileNumber_name' placeholder='Mobile Number' ng-model="MobileNumber">
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
 
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+
+
+                                        <div class="col-md-6">
+                                            <label class='col-md-5 control-label' for='id_title'>Primary EMail<span class="text-danger">*</span></label>
+                                            <div class='col-md-7'>
+                                                <input class='form-control' id='id_PrimaryEmail' placeholder='Primary Email' type='text' ng-model="PrimaryEmail"
+                                                       ng-class="{'validation-error': PrimaryEmailInputError}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class='col-md-5 control-label' for='id_title'>Alternate EMail</label>
+                                            <div class='col-md-7'>
+                                                <input class='form-control' id='id_AlternateEmail' placeholder='Alternate Email' type='text' ng-model="AlternateEmail">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">State <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <select id="ddlState" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
-                                                        ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <select id="ddlState" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a State.." style="width: 250px;"
+                                                        ng-options="x.stateid as x.name for x in states" ng-change="getState()">
                                                     <option value="">-- Choose State --</option>
                                                 </select>
                                             </div>
@@ -193,8 +232,8 @@
                                         <div class="col-md-6">
                                             <label class="col-md-5 control-label">City<span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <select id="ddlCity" name="state" ng-model="state" class="form-control" size="1" data-placeholder="Choose a Country.." style="width: 250px;"
-                                                        ng-options="x.stateid as x.name for x in states" ng-change="getStateCities(state)">
+                                                <select id="ddlCity" name="state" ng-model="city" class="form-control" size="1" data-placeholder="Choose a City.." style="width: 250px;"
+                                                        ng-options="x.cityid as x.name for x in city" ng-change="getStateCities(state)">
                                                     <option value="">-- Choose city --</option>
                                                 </select>
                                             </div>
@@ -202,37 +241,41 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+
+                                <div class='form-group'>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <label class='col-md-5 control-label' for='id_checkin'>Mobile No</label>
-                                            <div class='col-md-7 indent-small'>
-                                                <div class='form-group internal'>
-                                                    <input class='form-control' id='id_MobileNumber_name' placeholder='Mobile Number' type='number' ng-model="MobileNumber">
+                                            <label class="col-md-5 control-label" for="val_username">Locality </label>
+                                            <div class="col-md-7">
+                                                <div class="input-group">
+                                                    <input class='form-control' id='id_state_name' autocomplete="off" placeholder='Locality' type='text'
+                                                           ng-model="Locality">
+
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="col-md-6">
-                                            <label class='col-md-5 control-label' for='id_title'>E Mail</label>
-                                            <div class='col-md-7'>
-                                                <input class='form-control' id='id_first_name' placeholder='Primary Email' type='text' ng-model="PrimaryEmail"
-                                                       ng-class="{'validation-error': PrimaryEmailInputError}">
+                                            <label class="col-md-5 control-label" for="val_username">Pin Code <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <div class="input-group">
+                                                    <input class='form-control' id='id_PinCode' autocomplete="off" placeholder='Pin Code' type='text'
+                                                           ng-model="Pincode"
+                                                           ng-class="{'validation-error': PinCodeInputError}">
+
+                                                </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class='form-group'>
                                     <div class="col-md-12">
                                         <div class="col-md-6">
-                                            <label class='col-md-5 control-label' for='id_equipment'>Marital Status</label>
+                                            <label class='col-md-5 control-label' for='id_equipment'>Marital Status<span class="text-danger">*</span></label>
                                             <div class='col-md-7'>
-
                                                 <div class='form-group internal'>
-                                                    <select class='form-control' id='id_marital_status' ng-model="MaritalStatus">
+                                                    <select class='form-control' id='id_marital_status' ng-model="MaritalStatus" ng-class="{'validation-error': MaritalStatusInputError}">
                                                         <option value="0">Please Select</option>
-                                                        <option value="1">Unmarried</option>
+                                                        <option value="1">Single</option>
                                                         <option value="2">Married</option>
                                                     </select>
                                                 </div>
@@ -240,9 +283,8 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label class='col-md-5 control-label' for='id_equipment'>Gender</label>
+                                            <label class='col-md-5 control-label' for='id_equipment'>Gender<span class="text-danger">*</span></label>
                                             <div class='col-md-7'>
-
                                                 <div class='form-group internal'>
                                                     <select class='form-control' id='id_marital_status' ng-model="Gender"
                                                             ng-class="{'validation-error': GenderInputError}">
@@ -250,35 +292,33 @@
                                                         <option value="1">Female</option>
                                                     </select>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
-                                        <div class="col-md-6">
-                                            <label class='col-md-5 control-label' for='id_comments'>Upload Image</label>
-                                            <div class='col-md-7'>
-                                                <input type="file" input-file-control="uploadFile" />
-                                                <img ng-src="{{image_sorce}}" width="{{width}}" height="{{height}}" />
 
-                                            </div>
-                                        </div>
                                         <div class="col-md-6">
-                                            <label class='col-md-5 control-label' for='id_comments'>Profile Status</label>
+                                            <label class='col-md-5 control-label' for='id_comments'>Profile Status<span class="text-danger">*</span></label>
                                             <div class='col-md-7'>
 
                                                 <div class='form-group internal'>
                                                     <select class='form-control' id='id_status' ng-model="Status"
-                                                            ng-options="s.id as s.name for s in  profileStatus track by s.id"></select>
+                                                            ng-options="s.id as s.name for s in  profileStatus track by s.id" ng-class="{'validation-error': StatusInputError}"></select>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
 
+                                            <label class='col-md-5 control-label' for='id_comments'>Upload Image</label>
+                                            <div class='col-md-7'>
+                                                <input type="file" id='id_ProfilePicture' input-file-control="uploadFile" ng-model="ProfilePicture" />
+                                                <img ng-src="{{image_sorce}}" width="{{width}}" height="{{height}}" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class='form-group'>
                                     <div class="col-md-12">
                                         <label class='col-md-2 control-label' for='id_comments'>Write brief</label>
