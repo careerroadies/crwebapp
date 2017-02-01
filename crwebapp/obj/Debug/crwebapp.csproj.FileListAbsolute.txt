@@ -3,10 +3,10 @@ D:\crwebapp\crwebapp\crwebapp\bin\crwebapp.dll
 D:\crwebapp\crwebapp\crwebapp\bin\crwebapp.pdb
 D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.dll
 D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.pdb
-D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyReference.cache
 E:\CareerRoadies\crwebapp\crwebapp\bin\crwebapp.dll.config
 E:\CareerRoadies\crwebapp\crwebapp\bin\crwebapp.dll
 E:\CareerRoadies\crwebapp\crwebapp\bin\crwebapp.pdb
 E:\CareerRoadies\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyReference.cache
 E:\CareerRoadies\crwebapp\crwebapp\obj\Debug\crwebapp.dll
 E:\CareerRoadies\crwebapp\crwebapp\obj\Debug\crwebapp.pdb
+D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyReference.cache

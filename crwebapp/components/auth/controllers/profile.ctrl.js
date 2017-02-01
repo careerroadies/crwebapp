@@ -10,6 +10,10 @@ function profileController($scope, profileService, $routeParams, fillComboServic
     $scope.showeduview = true;
     $scope.showeduedit = false;
 
+    $scope.showetutorview = true;
+    $scope.showetutoredit = false;
+
+    $scope.FirstName = "Deepak Bhardwaj";
 
     $scope.showhide = function (type, tabtype) {
         if (tabtype == 'basic') {
@@ -20,6 +24,17 @@ function profileController($scope, profileService, $routeParams, fillComboServic
             else {
                 $scope.showview = true;
                 $scope.showedit = false;
+
+            }
+        }
+        else if (tabtype == 'tutor') {
+            if (type == 'v') {
+                $scope.showetutorview = false;
+                $scope.showetutoredit = true;
+            }
+            else {
+                $scope.showetutorview = true;
+                $scope.showetutoredit = false;
 
             }
         }
@@ -140,6 +155,16 @@ function profileController($scope, profileService, $routeParams, fillComboServic
         }
     };
 
+    $scope.getPinCodes = function (city) {
+        if (city) {
+            ($filter('filter')(fillComboService.fillCombo('GetPinCode', city, $scope.fillPinCode, $scope.fillComboError)));
+        }
+        else {
+            $scope.pincodes = null;
+            
+        }
+    };
+
     //$scope.fillComboComplete = function (response, status) {
     //    $scope.countries = response;
     //}
@@ -154,6 +179,15 @@ function profileController($scope, profileService, $routeParams, fillComboServic
         $scope.cities = response;
     }
 
+    $scope.fillComboError = function (response, status) {
+        $scope.error = "error in fill combo";
+        console.log($scope.error);
+    }
+
+    $scope.fillPinCode = function (response, status) {
+        $scope.pincodes = response;
+        console.log($scope.pincodes);
+    }
     $scope.fillComboError = function (response, status) {
         $scope.error = "error in fill combo";
         console.log($scope.error);
