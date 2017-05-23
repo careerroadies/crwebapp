@@ -10,3 +10,9 @@ E:\CareerRoadies\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyRefer
 E:\CareerRoadies\crwebapp\crwebapp\obj\Debug\crwebapp.dll
 E:\CareerRoadies\crwebapp\crwebapp\obj\Debug\crwebapp.pdb
 D:\crwebapp\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyReference.cache
+D:\crwebapp\crwebapp\bin\crwebapp.dll.config
+D:\crwebapp\crwebapp\bin\crwebapp.dll
+D:\crwebapp\crwebapp\bin\crwebapp.pdb
+D:\crwebapp\crwebapp\obj\Debug\crwebapp.dll
+D:\crwebapp\crwebapp\obj\Debug\crwebapp.pdb
+D:\crwebapp\crwebapp\obj\Debug\crwebapp.csprojResolveAssemblyReference.cache

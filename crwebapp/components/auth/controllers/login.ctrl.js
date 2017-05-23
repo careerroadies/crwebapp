@@ -29,6 +29,7 @@ function loginController($scope, $rootScope, registerService, $location, $window
 
     $scope.Loginerror = function (response) {
 
+        alert(response.ReturnMessage);
         alertsService.RenderErrorMessage(response.ReturnMessage);
         $scope.clearValidationErrors();
         alertsService.SetValidationErrors($scope, response.ValidationErrors);
@@ -41,9 +42,9 @@ function loginController($scope, $rootScope, registerService, $location, $window
     }
 
     $scope.Login = function () {
+        //alert(1);
         var objUser = $scope.newUserObj();
-      // registerService.Login(objUser, $scope.LoginComplete, $scope.Loginerror);
-
+        registerService.Login(objUser, $scope.LoginComplete, $scope.Loginerror);
         $window.location.href = "/Index.html#/Dashboard";
         
         //window.location = "/applicationMaster.html#/BasicProfile";

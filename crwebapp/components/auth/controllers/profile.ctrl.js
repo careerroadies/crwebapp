@@ -199,6 +199,7 @@ function profileController($scope, profileService, $routeParams, fillComboServic
     }
 
     $scope.errorOnProfile = function (response, status) {
+        
         alertsService.RenderErrorMessage(response.ReturnMessage);
         $scope.clearValidationErrors();
         alertsService.SetValidationErrors($scope, response.ValidationErrors);
@@ -219,9 +220,6 @@ function profileController($scope, profileService, $routeParams, fillComboServic
     }
 
     $scope.newProfileObj = function () {
-
-
-        // $scope.initControlles();
 
         var puser = new Object();
         puser.FirstName = $scope.FirstName;
