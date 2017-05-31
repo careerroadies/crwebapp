@@ -72,11 +72,18 @@
     <Content Include="components\shared\views\DashBoard - Copy %282%29.html" />
     <Content Include="components\shared\views\DashBoard.html" />
     <Content Include="components\shared\views\shownotes.html" />
-    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\icofont.eot" />
     <Content Include="fonts\icofont.svg" />
+    <Content Include="fonts\icofont.ttf" />
+    <Content Include="fonts\icofont.woff" />
+    <Content Include="fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="fonts\Material-Design-Iconic-Font.woff2" />
     <Content Include="images\apple-icon.png" />
     <Content Include="images\bg\1.jpg" />
@@ -88,6 +95,7 @@
     <Content Include="images\courses\1.jpg" />
     <Content Include="images\courses\2.jpg" />
     <Content Include="images\courses\3.jpg" />
+    <Content Include="images\CR-logo.png" />
     <Content Include="images\favicon.png" />
     <Content Include="images\footer-logo.png" />
     <Content Include="images\footer.jpg" />
@@ -110,12 +118,9 @@
     <Content Include="images\teachers\2.jpg" />
     <Content Include="images\teachers\3.jpg" />
     <Content Include="images\teachers\4.jpg" />
+    <Content Include="images\teachers\deepak.jpg" />
     <Content Include="img\group.jpg" />
     <Content Include="Index - Copy.html" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
-    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -248,16 +253,7 @@
     <Content Include="less\themes\spring.less" />
     <Content Include="less\themes\waterlily.less" />
     <Content Include="less\variables.less" />
-    <Content Include="obj\Debug\crwebapp.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\icofont.eot" />
-    <Content Include="fonts\icofont.ttf" />
-    <Content Include="fonts\icofont.woff" />
-    <Content Include="fonts\Material-Design-Iconic-Font.ttf" />
-    <Content Include="fonts\Material-Design-Iconic-Font.woff" />
+    <None Include="Properties\PublishProfiles\crwebpublish.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -823,9 +819,6 @@
     <Content Include="less\fonts\glyphicons.pro\glyphicons-regular.svg" />
     <Content Include="less\fonts\glyphicons.social.pro\glyphicons-social-regular.svg" />
     <Content Include="less\js\less.min.js" />
-    <Content Include="obj\Debug\crwebapp.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\crwebapp.dll" />
-    <Content Include="obj\Debug\crwebapp.pdb" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -1588,14 +1581,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="components\auth\directive\" />
-    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Content\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
